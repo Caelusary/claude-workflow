@@ -1,0 +1,6 @@
+.env
+.env.*
+*.log
+.claude/STATE.md
+.DS_Store
+Thumbs.db
