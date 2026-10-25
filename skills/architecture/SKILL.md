@@ -1,6 +1,6 @@
 ---
 name: architecture
-description: Structural judgment while writing code: where files belong, when to extract, module boundaries, coupling, server/client boundaries, API shape. Use when adding files or features, when a file is growing, when deciding to share logic, or when naming and organizing modules. Whole-repo audits: code-architect agent.
+description: "Structural judgment while writing code: where files belong, when to extract, module boundaries, coupling, server/client boundaries, API shape. Use when adding files or features, when a file is growing, when deciding to share logic, or when naming and organizing modules. Whole-repo audits: code-architect agent."
 ---
 
 # Architecture
