@@ -108,14 +108,14 @@ Each one audits a whole codebase. When several run at once, make them report-onl
 | `quality-bar.sh` | Session start | Prints a one-line count of open quality patterns |
 | `state-load.sh` | Session start | Loads the project's `STATE.md` |
 | `pre-compact-snapshot.sh` | Before compaction | Saves a snapshot so nothing important is lost |
-| `pre-commit-secrets.sh` | Before a commit | Scans staged files for keys, tokens and connection strings |
+| `pre-commit-secrets.sh` | Before a commit | Blocks more than one staged file per commit; scans staged files for keys, tokens and connection strings |
 
 ### Git hooks (`githooks/`)
 
 | Hook | What it does |
 |---|---|
-| `commit-msg` | Requires `type(scope): past-tense description` and rejects AI attribution lines |
-| `pre-commit` | Blocks secret-looking strings and real `.env` files |
+| `commit-msg` | Requires `type(scope): past-tense description` and rejects AI attribution lines and messages that name a different file than the one committed |
+| `pre-commit` | Blocks more than one staged file per commit, secret-looking strings and real `.env` files |
 
 ---
 
