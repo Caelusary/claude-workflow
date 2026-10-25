@@ -33,6 +33,8 @@ Copy this to `~/.claude/CLAUDE.md` and edit the "About me" section. Everything e
 
 **Lean mode** triggers on 30+ tool calls in a task, two outputs over 10 KB, a compaction, or "it's slow": save a `.claude/STATE.md` checkpoint (`session-state`), say "Lean mode" once, re-read nothing, keep replies to 1-3 sentences.
 
+**Deep-work exception:** ideation, design, security/compliance, audits, README/repo work and anything "thorough" get full depth. The waste rules (huge fetches, resends, re-reads) still apply.
+
 ## Defaults
 
 - Reversible local work proceeds without asking. Destructive or outward-facing actions (delete, force-push, commit, publish, send, deploy) always confirm.
