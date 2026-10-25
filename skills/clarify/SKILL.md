@@ -1,6 +1,6 @@
 ---
 name: clarify
-description: Resolve every open decision with the user before building. Use before any feature, component, page, flow, schema change or multi-file change, or whenever a gap exists in scope, behavior, data, visuals or security. Asks in rounds; only 'I don't know, you decide' lets Claude decide. Also /clarify.
+description: "Resolve every open decision with the user before building. Use before any feature, component, page, flow, schema change or multi-file change, or whenever a gap exists in scope, behavior, data, visuals or security. Asks in rounds; only 'I don't know, you decide' lets Claude decide. Also /clarify."
 ---
 
 # Clarify
