@@ -1,6 +1,6 @@
 ---
 name: readme
-description: Write or rewrite a README from what the code actually does: verified claims, real screenshots, a few live badges, fixed structure, docs-only commit. Use for README writing or polish, framework boilerplate, or a README that drifted from the code.
+description: "Write or rewrite a README from what the code actually does: verified claims, real screenshots, a few live badges, fixed structure, docs-only commit. Use for README writing or polish, framework boilerplate, or a README that drifted from the code."
 ---
 
 # README
