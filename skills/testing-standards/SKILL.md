@@ -1,6 +1,6 @@
 ---
 name: testing-standards
-description: What to test and how: choosing worthwhile cases, assertions that catch regressions, React component and async tests, avoiding brittle tests, the Playwright e2e scaffold, per-role access tests. Use when adding or reviewing tests, setting up a suite, deciding if something needs a test, or when a test is flaky. Coverage audit: qa-engineer.
+description: "What to test and how: choosing worthwhile cases, assertions that catch regressions, React component and async tests, avoiding brittle tests, the Playwright e2e scaffold, per-role access tests. Use when adding or reviewing tests, setting up a suite, deciding if something needs a test, or when a test is flaky. Coverage audit: qa-engineer."
 ---
 
 # Testing Standards
