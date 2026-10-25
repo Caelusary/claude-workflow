@@ -1,6 +1,6 @@
 ---
 name: summarize
-description: Project status in a fixed three-table format: not done yet (buildable now), tied to deployment, needs their decision. Use on 'summarize', 'summary', 'what's left', 'what's not done', or any status request.
+description: "Project status in a fixed three-table format: not done yet (buildable now), tied to deployment, needs their decision. Use on 'summarize', 'summary', 'what's left', 'what's not done', or any status request."
 ---
 
 # Summarize
