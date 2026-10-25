@@ -1,6 +1,6 @@
 ---
 name: ideate
-description: Find and shape product ideas. DISCOVER researches an area on the web and returns 5-8 grounded, non-generic ideas; EXPLORE maps one idea's needs, limits and scope, then hands off to project-blueprint. Use when given a theme or area, or they say 'I need an idea', 'what could I build', 'find a gap', or asks to flesh out, scope, map or stress-test an idea or what it needs.
+description: "Find and shape product ideas. DISCOVER researches an area on the web and returns 5-8 grounded, non-generic ideas; EXPLORE maps one idea's needs, limits and scope, then hands off to project-blueprint. Use when given a theme or area, or they say 'I need an idea', 'what could I build', 'find a gap', or asks to flesh out, scope, map or stress-test an idea or what it needs."
 ---
 
 # Ideate
@@ -84,6 +84,8 @@ Ask via `clarify` before mapping anything undecided. Then produce:
 12. **Open questions:** anything unresolved, each marked for clarify.
 
 ### Handoff
+
+If it suits the product and a taste profile exists (`../design-taste/reference/taste-profile.md`, an optional lens with its own fit check; skip for client, brand-led or rubric-bound work), glance at it. Before finalizing the functionality map, skim `reference/feature-concepts.md` (reusable feature ideas harvested from past builds, concepts only) and pick the 3-5 that serve this product's core loop. Adapt them to the domain; never copy a past product.
 
 When the map is approved, pass it to `project-blueprint` as its Step 1 input so discovery questions are not repeated. Deliver DISCOVER and EXPLORE results as an Artifact if the user wants to share or reread them; keep the file too.
 
