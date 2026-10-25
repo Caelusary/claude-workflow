@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+# Commit message rules, enforced for every repo (git config --global core.hooksPath ~/.githooks).
+#   type(scope): past-tense description
+#   no AI attribution lines
+# A repo's own .git/hooks/commit-msg still runs after this one.
+
+msg_file="$1"
+subject=$(grep -v '^#' "$msg_file" | sed -n '/./{p;q}')
+
+fail() {
+  echo "commit-msg: $1" >&2
+  echo "  got:      $subject" >&2
+  echo "  expected: type(scope): past-tense description   e.g. feat(auth): added password reset" >&2
+  exit 1
+}
+
+# Git's own generated messages pass untouched.
+case "$subject" in
+  "Merge "*|"Revert "*|"fixup! "*|"squash! "*|"amend! "*) skip=1 ;;
+esac
+
+if [ -z "$skip" ]; then
+  if grep -v '^#' "$msg_file" | grep -qiE 'co-authored-by:.*(claude|anthropic)|generated with.*claude|claude\.com/claude-code|🤖'; then
+    fail "AI attribution lines aren't allowed"
+  fi
+
+  types='feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert'
+  echo "$subject" | grep -qE "^($types)\([a-z0-9._/-]+\): .+" ||
+    fail "subject must be type(scope): description, with type one of: ${types//|/, }"
+
+  first=$(echo "$subject" | sed -E 's/^[^:]+: *//' | awk '{print tolower($1)}')
+  irregular=' made built set put wrote kept ran hid cut split sent gave took got left led let read shut stood drew threw brought began rebuilt reset rewrote undid fed bound broke chose found held lit lost meant paid slid struck tore won wound spun sped swept dealt bent became forgot hung laid shown taught thought fought sought upheld withheld overrode rode grew knew flew blew saw did came went told sold heard understood swung stuck dug fit shed spread quit sat sank shrank sprang stole woke wore '
+  base="${first#re}"  # redrew, rebuilt, rewrote: check the verb after "re"
+  case "$first" in
+    *ed) ;;
+    *) case "$irregular" in *" $first "*|*" $base "*) ;; *) fail "description must start with a past-tense verb ('added', not 'add'/'adds')" ;; esac ;;
+  esac
+fi
+
+local_hook="$(git rev-parse --git-dir)/hooks/commit-msg"
+[ -x "$local_hook" ] && exec "$local_hook" "$@"
+exit 0
