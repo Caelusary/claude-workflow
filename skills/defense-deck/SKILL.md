@@ -1,6 +1,6 @@
 ---
 name: defense-deck
-description: Plan, build and rehearse a presentation that survives questions: PANEL (thesis, capstone) or DEMO (hackathon). Evidence-based visuals, verified citations, anticipated questions, demo fallback. Use for defenses, pitches, demo days, capstone presentations, slide decks for a project, or likely panel/judge questions.
+description: "Plan, build and rehearse a presentation that survives questions: PANEL (thesis, capstone) or DEMO (hackathon). Evidence-based visuals, verified citations, anticipated questions, demo fallback. Use for defenses, pitches, demo days, capstone presentations, slide decks for a project, or likely panel/judge questions."
 ---
 
 # Defense deck
