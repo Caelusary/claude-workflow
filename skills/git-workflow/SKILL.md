@@ -1,6 +1,6 @@
 ---
 name: git-workflow
-description: Commit rules (one commit per file, past tense, no AI attribution) and GitHub repo health: LICENSE, SECURITY.md, CONTRIBUTING, CHANGELOG, templates, CI, metadata, naming, gitignore, keeping scratch files out. Use when committing, reviewing a diff, splitting commits, writing commit messages, setting up or polishing a repo, preparing a release, or untracking a file. README: readme skill.
+description: "Commit rules (one commit per file, past tense, no AI attribution) and GitHub repo health: LICENSE, SECURITY.md, CONTRIBUTING, CHANGELOG, templates, CI, metadata, naming, gitignore, keeping scratch files out. Use when committing, reviewing a diff, splitting commits, writing commit messages, setting up or polishing a repo, preparing a release, or untracking a file. README: readme skill."
 ---
 
 # Git Workflow
@@ -14,7 +14,25 @@ Meticulous staging, committing, and repository health. Never invent facts, never
 3. `git diff` (and `git diff --staged`) to understand each file's change.
 4. Group changes per file and draft one specific message per file.
 5. **Present the plan and wait for explicit approval before staging or committing anything.** Show it in the output format below and stop — this is a real gate, not a formality.
-6. Once approved, commit files individually: `git add <file>` then `git commit -m "<message>"`, one commit per file.
+6. Once approved, commit files individually, one commit per file, with the safe loop below.
+
+### Safe commit loop
+
+```bash
+c() { f="$1"; m="$2"
+  git add -- "$f" && git commit -q -m "$m" -- "$f" && echo "OK   $f"     || { git reset -q; echo "FAIL $f (unstaged, loop continues; fix and retry this file)"; }; }
+c src/login.js "feat(auth): added password reset to login.js"
+c README.md    "docs(readme): rewrote installation instructions"
+```
+
+A rejected commit unstages its file, so it can't be swept into the next commit. After the batch, `git log --stat` must show exactly one file per commit.
+
+### What the global hooks enforce
+
+- `pre-commit` blocks any commit with more than one staged file (merges, the first commit, rebases and cherry-picks are exempt; a rename counts as one), and blocks secret-looking strings and real `.env` files.
+- `commit-msg` blocks a wrong format or a non-past-tense verb, AI attribution, and a message that names a different repo file than the one being committed. A message that names no file is fine.
+- Deliberate exceptions: `ALLOW_MULTI_FILE=1 git commit ...` for the file rules, `SKIP_SECRET_SCAN=1` for the secrets scan. Never use either without telling the user why.
+- The hooks cannot check that a message describes the change accurately or that the plan was approved; that is still this skill's job.
 7. **Never push** unless the user says "push" in that same turn.
 8. If functionality, commands, env vars, or UI changed, flag whether the README needs updating (hand off to `readme`).
 
