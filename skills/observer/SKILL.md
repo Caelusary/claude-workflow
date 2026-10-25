@@ -1,6 +1,6 @@
 ---
 name: observer
-description: Cross-project learning: log recurring patterns (not incidents) to ~/.claude/lessons/patterns and apply the quality checks. Use after a substantial task, when they correct something in a way that applies generally, when a rule or skill is broken, when starting a project or significant feature (run the quality bar), or when asked to review or consolidate lessons.
+description: "Cross-project learning: log recurring patterns (not incidents) to ~/.claude/lessons/patterns and apply the quality checks. Use after a substantial task, when they correct something in a way that applies generally, when a rule or skill is broken, when starting a project or significant feature (run the quality bar), or when asked to review or consolidate lessons."
 ---
 
 # Observer
