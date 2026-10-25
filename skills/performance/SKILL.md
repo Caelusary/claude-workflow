@@ -1,6 +1,6 @@
 ---
 name: performance
-description: Make code fast while writing it: React rendering and Compiler, Next.js caching, bundle size, waterfalls, images/fonts, Core Web Vitals, weak-device behavior. Use when building, when something feels slow, or to optimize. Algorithms: algorithms skill; repo audit: performance-engineer.
+description: "Make code fast while writing it: React rendering and Compiler, Next.js caching, bundle size, waterfalls, images/fonts, Core Web Vitals, weak-device behavior. Use when building, when something feels slow, or to optimize. Algorithms: algorithms skill; repo audit: performance-engineer."
 ---
 
 # Performance
