@@ -4,6 +4,21 @@
 # Opt out for one line with a trailing comment:  allow-secret
 # Opt out for one commit:  SKIP_SECRET_SCAN=1 git commit ...
 
+# One file per commit. Exempt: merges, cherry-picks, rebases, the repo's first commit, ALLOW_MULTI_FILE=1.
+gitdir=$(git rev-parse --git-dir)
+if [ -z "$ALLOW_MULTI_FILE" ] && [ ! -f "$gitdir/MERGE_HEAD" ] && [ ! -f "$gitdir/CHERRY_PICK_HEAD" ] \
+   && [ ! -d "$gitdir/rebase-merge" ] && [ ! -d "$gitdir/rebase-apply" ] && git rev-parse --verify -q HEAD >/dev/null; then
+  changes=$(git diff --cached --name-status -M)
+  count=$(printf '%s\n' "$changes" | grep -c .)
+  if [ "$count" -gt 1 ]; then
+    echo "pre-commit: $count files staged, but the rule is one file per commit:" >&2
+    printf '%s\n' "$changes" | head -10 | sed 's/^/  /' >&2
+    echo "  Commit each separately:  git add <file> && git commit -m \"type(scope): message\" -- <file>" >&2
+    echo "  Deliberate exception:    ALLOW_MULTI_FILE=1 git commit ..." >&2
+    exit 1
+  fi
+fi
+
 if [ -z "$SKIP_SECRET_SCAN" ]; then
   found=0
 
