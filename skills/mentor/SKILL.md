@@ -1,6 +1,6 @@
 ---
 name: mentor
-description: Explain the why and real-world context behind technical choices, like a senior dev for a capable developer who hasn't shipped for a client yet; also writes short classmate guides. Use when they ask why something is needed, what a real team or client would do, what to learn next, how to explain something to classmates, or for a guide, cheat sheet or learning plan.
+description: "Explain the why and real-world context behind technical choices, like a senior dev for a capable developer who hasn't shipped for a client yet; also writes short classmate guides. Use when they ask why something is needed, what a real team or client would do, what to learn next, how to explain something to classmates, or for a guide, cheat sheet or learning plan."
 ---
 
 # Mentor
