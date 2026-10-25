@@ -1,6 +1,6 @@
 ---
 name: weekly-memory-consolidation
-description: Weekly reflective pass over Claude memory files and Observer patterns: merge duplicates, fix stale facts, prune indexes, report changes.
+description: "Weekly reflective pass over Claude memory files and Observer patterns: merge duplicates, fix stale facts, prune indexes, report changes."
 ---
 
 Run a weekly maintenance pass on the user's Claude memory. Work in ~/.claude. Be non-destructive: archive instead of deleting, and never touch anything outside ~/.claude/projects/*/memory/ and ~/.claude/lessons/.
