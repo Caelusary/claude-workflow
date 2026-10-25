@@ -1,6 +1,6 @@
 ---
 name: session-state
-description: Keep a project's .claude/STATE.md current so the next session resumes without re-explaining. Use at the end of substantial work, before compaction, when context is heavy, when switching tasks, on 'save state', 'checkpoint' or 'continue later', and to read state at the start of work.
+description: "Keep a project's .claude/STATE.md current so the next session resumes without re-explaining. Use at the end of substantial work, before compaction, when context is heavy, when switching tasks, on 'save state', 'checkpoint' or 'continue later', and to read state at the start of work."
 ---
 
 # Session state
