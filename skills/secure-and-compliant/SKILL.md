@@ -1,6 +1,6 @@
 ---
 name: secure-and-compliant
-description: Decide what a site or app needs for security, privacy and legal cover (privacy policy, terms, cookies, age gate, deletion, refunds, security.txt), draft templates, and run an abuse-case pass: auth, access control, replay, rate limits, uploads, headers, secrets, supply chain. Use when planning, adding accounts, payments, uploads, tracking, kids' content or user-to-user features, before launch, or asked what legal pages or protections are needed.
+description: "Decide what a site or app needs for security, privacy and legal cover (privacy policy, terms, cookies, age gate, deletion, refunds, security.txt), draft templates, and run an abuse-case pass: auth, access control, replay, rate limits, uploads, headers, secrets, supply chain. Use when planning, adding accounts, payments, uploads, tracking, kids' content or user-to-user features, before launch, or asked what legal pages or protections are needed."
 ---
 
 # Secure and compliant
