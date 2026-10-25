@@ -1,6 +1,6 @@
 ---
 name: brain-dump
-description: Organize the user's messy, many-threaded messages into themes, decisions, next steps and a parked list, naming one next step. Use for stream-of-consciousness messages, many ideas at once, 'brain dump', 'help me organize', 'what should I do first', or when they seem overloaded.
+description: "Organize the user's messy, many-threaded messages into themes, decisions, next steps and a parked list, naming one next step. Use for stream-of-consciousness messages, many ideas at once, 'brain dump', 'help me organize', 'what should I do first', or when they seem overloaded."
 ---
 
 # Brain dump
