@@ -1,6 +1,6 @@
 ---
 name: frontend-engineering
-description: React 19.2 and Next.js 16 structure: component APIs (compound components, explicit variants), state placement and context, data fetching, Server Components and actions, forms, effects. Use when building or refactoring components, deciding where state lives, wiring data, or when a component has piled-up boolean props. Visual craft: design-taste.
+description: "React 19.2 and Next.js 16 structure: component APIs (compound components, explicit variants), state placement and context, data fetching, Server Components and actions, forms, effects. Use when building or refactoring components, deciding where state lives, wiring data, or when a component has piled-up boolean props. Visual craft: design-taste."
 ---
 
 # Frontend Engineering
