@@ -1,6 +1,6 @@
 ---
 name: debugging
-description: Root-cause debugging: reproduce, measure, one hypothesis, one change, confirm. Use when something is broken, flaky, slow, invisible or not rendering, fails only in CI or on a device, shows a layout or visual bug, when a fix didn't work or a test fails intermittently, or before blaming a tool, library or browser.
+description: "Root-cause debugging: reproduce, measure, one hypothesis, one change, confirm. Use when something is broken, flaky, slow, invisible or not rendering, fails only in CI or on a device, shows a layout or visual bug, when a fix didn't work or a test fails intermittently, or before blaming a tool, library or browser."
 ---
 
 # Debugging
@@ -25,6 +25,8 @@ The failure mode: guessing at causes, changing several things, and declaring vic
 - **Performance:** measure a trivial page under the same setup first. Synthetic and headless tools may run GPU work on the CPU and overstate cost. Profile before optimising.
 - **Works locally, fails elsewhere:** diff the environments (versions, env vars, headers, case-sensitive paths, timezone, data), not the code.
 - **Passes alone, fails in suite:** shared state, order dependence, a port already used by another project's server.
+- **A click that does nothing in a dev server:** dev overlays and pointer-event components can swallow synthetic clicks. Dispatch the real events (`pointerdown`/`pointerup`/`mousedown`) or test against a production build before concluding the handler is broken.
+- **UI behind a login you can't or shouldn't pass:** build a small standalone page with just the CSS and DOM geometry in question and measure that, instead of guessing from code.
 - **Stale UI after a change:** reproduce with many repeats; suspect caching, loading boundaries and optimistic state before the mutation itself.
 - **Data bug:** read the actual row or payload, not the type definition.
 - **"It worked yesterday":** `git bisect` or compare lockfile and env changes before theorising.
