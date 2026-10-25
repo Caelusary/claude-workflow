@@ -1,6 +1,6 @@
 ---
 name: project-init
-description: Set up a new project's foundation locally (no git or deploy): project CLAUDE.md, gitignore, env split, tests, CI, security baseline, STATE.md, using clarify first. Use when starting, scaffolding or bootstrapping a project or adopting an existing folder.
+description: "Set up a new project's foundation locally (no git or deploy): project CLAUDE.md, gitignore, env split, tests, CI, security baseline, STATE.md, using clarify first. Use when starting, scaffolding or bootstrapping a project or adopting an existing folder."
 ---
 
 # Project init
