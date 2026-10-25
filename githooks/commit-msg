@@ -37,6 +37,20 @@ if [ -z "$skip" ]; then
   esac
 fi
 
+if [ -z "$skip" ] && [ -z "$ALLOW_MULTI_FILE" ]; then
+  # The message must not name a different repo file than the one(s) this commit changes.
+  staged=$(git diff --cached --name-only -M 2>/dev/null)
+  if [ -n "$staged" ]; then
+    repo=$(git ls-files 2>/dev/null)
+    has_file() { printf '%s\n' "$1" | awk -v t="$2" -v b="${2##*/}" '{ n=split($0,p,"/"); if ($0==t || p[n]==b) f=1 } END { exit !f }'; }
+    for tok in $(grep -v '^#' "$msg_file" | grep -oE '[A-Za-z0-9_./@-]+\.[A-Za-z0-9]{1,8}' | sort -u); do
+      if has_file "$repo" "$tok" && ! has_file "$staged" "$tok"; then
+        fail "message names '$tok', but this commit only changes: $(echo $staged | tr '\n' ' ')(use ALLOW_MULTI_FILE=1 to override)"
+      fi
+    done
+  fi
+fi
+
 local_hook="$(git rev-parse --git-dir)/hooks/commit-msg"
 [ -x "$local_hook" ] && exec "$local_hook" "$@"
 exit 0
