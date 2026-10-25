@@ -1,6 +1,6 @@
 ---
 name: orchestrator
-description: Session conductor: on 'orchestrator on' it records session goals, picks and runs the right skills and agents, sizes checks to the change, and runs full audits only before committing or when all goals are done. Off with 'orchestrator off'. Use for 'handle it', 'you pick the skills', 'use whatever this project needs' or 'run the usual workflow'.
+description: "Session conductor: on 'orchestrator on' it records session goals, picks and runs the right skills and agents, sizes checks to the change, and runs full audits only before committing or when all goals are done. Off with 'orchestrator off'. Use for 'handle it', 'you pick the skills', 'use whatever this project needs' or 'run the usual workflow'."
 ---
 
 # Orchestrator
