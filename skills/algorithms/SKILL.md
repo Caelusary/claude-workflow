@@ -1,6 +1,6 @@
 ---
 name: algorithms
-description: Algorithm and data-structure choice, complexity, hot paths, and database-side traps (N+1, indexes, pagination). Use when writing or reviewing code that sorts, searches, groups, dedupes, traverses, caches or loops over user-scale data, when slowness may be the approach rather than the implementation, or when choosing a map, set, array or tree.
+description: "Algorithm and data-structure choice, complexity, hot paths, and database-side traps (N+1, indexes, pagination). Use when writing or reviewing code that sorts, searches, groups, dedupes, traverses, caches or loops over user-scale data, when slowness may be the approach rather than the implementation, or when choosing a map, set, array or tree."
 ---
 
 # Algorithms
