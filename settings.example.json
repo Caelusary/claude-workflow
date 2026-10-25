@@ -1,0 +1,45 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/quality-bar.sh",
+            "timeout": 10,
+            "statusMessage": "Loading quality bar"
+          },
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/state-load.sh",
+            "timeout": 10,
+            "statusMessage": "Loading project state"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/deploy-guard.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/pre-compact-snapshot.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
