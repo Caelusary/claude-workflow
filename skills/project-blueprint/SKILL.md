@@ -1,6 +1,6 @@
 ---
 name: project-blueprint
-description: Turn an approved idea into a production-ready blueprint: concept, UX, design system, architecture, schema, error handling, security, roadmap. Use when an early idea needs a full spec or 'how would I build X'. Starts from ideate's EXPLORE map when it exists.
+description: "Turn an approved idea into a production-ready blueprint: concept, UX, design system, architecture, schema, error handling, security, roadmap. Use when an early idea needs a full spec or 'how would I build X'. Starts from ideate's EXPLORE map when it exists."
 ---
 
 # Project Blueprint
